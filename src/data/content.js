@@ -7,17 +7,28 @@ export const site = {
 export const experience = [
   {
     role: 'Data Engineer',
-    company: 'Company Name',
-    period: '2023 — Present',
+    company: 'Astra International Tbk',
+    companyLogo: 'assets/images/jobs/astra.png',
+    period: 'Jan 2025 — Present',
     points: [
       'Describe what you do here.',
       'Add another achievement.',
     ],
   },
   {
-    role: 'Previous Role',
-    company: 'Previous Company',
-    period: '2021 — 2023',
+    role: 'Data Engineer',
+    company: 'Hypefast',
+    companyLogo: 'assets/images/jobs/hypefast.jpeg',
+    period: 'Sep 2021 — Dec 2024',
+    points: [
+      'Describe what you did here.',
+    ],
+  },
+  {
+    role: 'Data Engineer',
+    company: 'PT Spasi Indonesia',
+    companyLogo: 'assets/images/jobs/spasi indonesia.png',
+    period: 'Mar 2021 — Sep 2021',
     points: [
       'Describe what you did here.',
     ],
@@ -38,7 +49,11 @@ export const skills = [
     items: ['PostgreSQL', 'BigQuery', 'Snowflake'],
   },
   {
-    category: 'Cloud & DevOps',
+    category: 'Cloud',
+    items: ['AWS', 'Docker', 'Terraform', 'CI/CD'],
+  },
+  {
+    category: 'Dashboard',
     items: ['AWS', 'Docker', 'Terraform', 'CI/CD'],
   },
 ]

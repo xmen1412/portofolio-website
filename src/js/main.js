@@ -16,8 +16,14 @@ timeline.innerHTML = experience
   .map(
     (job) => `
     <div class="job">
-      <h3>${job.role} · <span class="company">${job.company}</span></h3>
-      <p class="period">${job.period}</p>
+      <div class="job-head">
+        ${job.companyLogo ? `<img class="job-logo" src="${job.companyLogo}" alt="${job.company}" />` : ''}
+        <div>
+          <h3>${job.role}</h3>
+          <p class="company">${job.company}</p>
+          <p class="period">${job.period}</p>
+        </div>
+      </div>
       <ul>${job.points.map((p) => `<li>${p}</li>`).join('')}</ul>
     </div>`
   )

@@ -155,6 +155,29 @@ a:hover {
   font-weight: 600;
 }
 
+.job-head {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 0.9rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.job-logo {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  border-radius: 16px;
+  background: var(--card);
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.job-logo:hover {
+  transform: scale(1.05);
+}
+
 .job .company {
   color: var(--accent);
   font-weight: 500;
@@ -163,7 +186,6 @@ a:hover {
 .job .period {
   color: var(--text-muted);
   font-size: 0.9rem;
-  margin-bottom: 0.6rem;
 }
 
 .job ul {
