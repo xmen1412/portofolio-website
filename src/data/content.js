@@ -1,5 +1,5 @@
 export const site = {
-  name: 'Akbar',
+  name: 'Hello Welcome, My Name Is Muhammad Akbar',
   role: 'Data Engineer',
   tagline: 'Building reliable data pipelines, warehouses, and analytics that turn raw data into decisions.',
 }
@@ -25,16 +25,22 @@ export const experience = [
 ]
 
 export const skills = [
-  'Python',
-  'SQL',
-  'Apache Spark',
-  'dbt',
-  'Airflow',
-  'PostgreSQL',
-  'BigQuery',
-  'Docker',
-  'Terraform',
-  'AWS',
+  {
+    category: 'Languages',
+    items: ['Python', 'SQL', 'Bash'],
+  },
+  {
+    category: 'Data Engineering',
+    items: ['Apache Spark', 'dbt', 'Airflow', 'Kafka'],
+  },
+  {
+    category: 'Databases',
+    items: ['PostgreSQL', 'BigQuery', 'Snowflake'],
+  },
+  {
+    category: 'Cloud & DevOps',
+    items: ['AWS', 'Docker', 'Terraform', 'CI/CD'],
+  },
 ]
 
 export const projects = [
@@ -42,12 +48,16 @@ export const projects = [
     name: 'Project Name',
     description: 'Short description of what this project does and why it matters.',
     tech: ['Python', 'Spark', 'Airflow'],
+    date: '2025',
+    context: 'Personal',
     link: '#',
   },
   {
     name: 'Project Name',
     description: 'Short description of what this project does and why it matters.',
     tech: ['dbt', 'BigQuery'],
+    date: '2024',
+    context: 'Company (My Workspace)',
     link: '#',
   },
 ]

@@ -24,13 +24,25 @@ timeline.innerHTML = experience
   .join('')
 
 const skillsList = document.getElementById('skills')
-skillsList.innerHTML = skills.map((s) => `<span class="skill">${s}</span>`).join('')
+skillsList.innerHTML = skills
+  .map(
+    (group) => `
+    <div class="skill-group">
+      <h3 class="skill-category">${group.category}</h3>
+      <div class="skill-tags">${group.items.map((s) => `<span class="skill">${s}</span>`).join('')}</div>
+    </div>`
+  )
+  .join('')
 
 const projectGrid = document.getElementById('projects')
 projectGrid.innerHTML = projects
   .map(
     (p) => `
     <div class="card">
+      <div class="card-meta">
+        <span class="card-date">${p.date}</span>
+        <span class="card-context">${p.context}</span>
+      </div>
       <h3><a href="${p.link}">${p.name}</a></h3>
       <p>${p.description}</p>
       <div class="tags">${p.tech.map((t) => `<span class="tag">${t}</span>`).join('')}</div>
