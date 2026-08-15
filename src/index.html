@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Akbar — Data Engineer portfolio." />
+    <title>Akbar · Data Engineer</title>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="nav-inner">
+        <a class="logo" href="#">Akbar</a>
+        <div class="nav-links">
+          <a href="#experience">Experience</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section class="hero container">
+        <h1 id="hero-name"></h1>
+        <p class="role" id="hero-role"></p>
+        <p class="tagline" id="hero-tagline"></p>
+      </section>
+
+      <section id="experience" class="section container">
+        <h2 class="section-title">Experience</h2>
+        <div class="timeline" id="timeline"></div>
+      </section>
+
+      <section id="skills" class="section container">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills" id="skills"></div>
+      </section>
+
+      <section id="projects" class="section container">
+        <h2 class="section-title">Projects</h2>
+        <div class="grid" id="projects"></div>
+      </section>
+
+      <section id="contact" class="section container">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-links">
+          <a id="contact-email" href="#"></a>
+          <a id="contact-github" href="#">GitHub</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© <span id="footer-year"></span> Akbar · Built with Vite</p>
+    </footer>
+
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>

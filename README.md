@@ -1,16 +1,36 @@
-# Akbar's Portfolio
+# Portofolio — Data Engineer
 
-Welcome to my personal portfolio website, hosted with [GitHub Pages](https://pages.github.com/).
+My personal portfolio website, built with Vite and deployed to GitHub Pages.
 
-Hi, I’m **Akbar**. Nice to meet you! 👋
+## Live site
 
+https://xmen1412.github.io/portofolio-website/
 
+## Development
+
+```bash
+npm install
+npm run dev      # local dev server
+npm run build    # build production site to dist/
+npm run preview  # preview the production build
+```
+
+## Structure
+
+```
+src/
+├── index.html      # page markup
+├── css/style.css   # styles (dark/light themes via CSS variables)
+├── js/main.js      # renders content into the page
+├── js/theme.js     # dark/light theme toggle
+├── data/content.js # all site content (edit this)
+└── assets/images/  # put images here
+```
+
+## Deploy
+
+Push to `master` — GitHub Actions builds and deploys `dist/` to GitHub Pages automatically.
 
 ## Contact
 
-* Email: [akbar382043@gmail.com](mailto:akbar382043@gmail.com)
-* LinkedIn: [Muhammad Akbar](https://www.linkedin.com/in/muhammad-akbar-b9a1bb126/)
-
-Enjoy exploring my portfolio, and feel free to reach out if you’d like to connect!
-
-Thanks for stopping by! 🚀
+- Email: akbar382043@gmail.com
