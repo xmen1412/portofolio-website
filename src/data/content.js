@@ -65,4 +65,5 @@ export const projects = [
 export const contact = {
   email: 'akbar382043@gmail.com',
   github: 'https://github.com/xmen1412',
+  linkedin: 'https://www.linkedin.com/in/your-username',
 }

@@ -50,8 +50,20 @@ projectGrid.innerHTML = projects
   )
   .join('')
 
-document.getElementById('contact-email').textContent = contact.email
-document.getElementById('contact-email').href = `mailto:${contact.email}`
+const contactEmail = document.getElementById('contact-email')
+contactEmail.href = `mailto:${contact.email}`
 document.getElementById('contact-github').href = contact.github
+document.getElementById('contact-linkedin').href = contact.linkedin
+
+const contactForm = document.getElementById('contact-form')
+contactForm.addEventListener('submit', (e) => {
+  e.preventDefault()
+  const name = document.getElementById('cf-name').value.trim()
+  const fromEmail = document.getElementById('cf-email').value.trim()
+  const message = document.getElementById('cf-message').value.trim()
+  const subject = encodeURIComponent(`Message from ${name} via portfolio`)
+  const body = encodeURIComponent(`${message}\n\n— ${name}\nReply to: ${fromEmail}`)
+  window.location.href = `mailto:${contact.email}?subject=${subject}&body=${body}`
+})
 
 document.getElementById('footer-year').textContent = new Date().getFullYear()
