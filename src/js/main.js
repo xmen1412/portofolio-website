@@ -5,15 +5,20 @@ import '../css/style.css'
 
 initTheme(document.getElementById('theme-toggle'))
 
+document.getElementById('site-logo').textContent = site.logo
+document.title = `${site.name} — ${site.role}`
+
 const heroGreeting = document.getElementById('hero-greeting')
 const heroName = document.getElementById('hero-name')
 const heroRole = document.getElementById('hero-role')
+const heroPersonality = document.getElementById('hero-personality')
 const heroTagline = document.getElementById('hero-tagline')
 const heroAvatar = document.getElementById('hero-avatar')
 
 heroGreeting.textContent = site.greeting
 heroName.textContent = site.name
 heroRole.textContent = site.role
+heroPersonality.textContent = site.personality
 heroTagline.textContent = site.tagline
 
 if (site.avatar) {

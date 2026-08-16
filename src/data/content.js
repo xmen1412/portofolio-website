@@ -1,11 +1,12 @@
 export const site = {
   greeting: 'Hello, I\'m',
   name: 'Muhammad Akbar',
-  role: 'Data Engineer',
+  role: 'Data Alchemist',
+  personality: 'Growth-driven guy',
   tagline:
     'Building reliable data pipelines, warehouses, and analytics that turn raw data into decisions.',
-  avatar: null,
-  // placecholder for avatar assets/images/your-photo.jpg
+  avatar: 'assets/images/profile/profile.jpeg',
+  logo: 'mrakbar.exe',
 }
 
 export const experience = [
@@ -29,10 +30,19 @@ export const experience = [
     ],
   },
   {
-    role: 'Data Engineer',
+    role: 'Data Analyst',
     company: 'PT Spasi Indonesia',
     companyLogo: 'assets/images/jobs/spasi indonesia.png',
     period: 'Mar 2021 — Sep 2021',
+    points: [
+      'Describe what you did here.',
+    ],
+  },
+  {
+    role: 'ICT Support Intern',
+    company: 'Injourney Indonesia',
+    companyLogo: 'assets/images/jobs/injourney.png',
+    period: ' 2021 — Sep 2021',
     points: [
       'Describe what you did here.',
     ],
