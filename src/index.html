@@ -13,6 +13,7 @@
         <div class="nav-links">
           <a href="#experience">Experience</a>
           <a href="#skills">Skills</a>
+          <a href="#education">Education</a>
           <a href="#projects">Projects</a>
           <a href="#contact">Contact</a>
           <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
@@ -22,28 +23,81 @@
 
     <main>
       <section class="hero container">
-        <h1 id="hero-name"></h1>
-        <p class="role" id="hero-role"></p>
-        <p class="tagline" id="hero-tagline"></p>
+        <div class="profile-card">
+          <div class="profile-avatar" id="hero-avatar"></div>
+          <div class="profile-body">
+            <p class="profile-greeting" id="hero-greeting"></p>
+            <h1 id="hero-name"></h1>
+            <p class="profile-role" id="hero-role"></p>
+            <p class="profile-tagline" id="hero-tagline"></p>
+          </div>
+        </div>
       </section>
 
       <section id="experience" class="section container">
-        <h2 class="section-title">Experience</h2>
-        <div class="timeline" id="timeline"></div>
+        <header class="section-header">
+          <h2 class="section-title">Experience</h2>
+          <p class="section-subtitle">My professional journey in data engineering</p>
+        </header>
+        <div class="carousel" id="experience-carousel" data-per-view="1">
+          <div class="carousel-viewport">
+            <div class="carousel-track" id="timeline"></div>
+          </div>
+          <div class="carousel-nav">
+            <button type="button" class="carousel-btn carousel-prev" aria-label="Previous experience">← Previous</button>
+            <span class="carousel-counter" aria-live="polite">1 / 1</span>
+            <button type="button" class="carousel-btn carousel-next" aria-label="Next experience">Next →</button>
+          </div>
+        </div>
       </section>
 
       <section id="skills" class="section container">
-        <h2 class="section-title">Skills</h2>
-        <div class="skills" id="skills"></div>
+        <header class="section-header">
+          <h2 class="section-title">Skills</h2>
+          <p class="section-subtitle">Technologies and tools I work with</p>
+        </header>
+        <div class="skills" id="skills-list"></div>
+      </section>
+
+      <section id="education" class="section container">
+        <header class="section-header">
+          <h2 class="section-title">Education</h2>
+          <p class="section-subtitle">My academic background</p>
+        </header>
+        <div class="carousel" id="education-carousel" data-per-view="1">
+          <div class="carousel-viewport">
+            <div class="carousel-track" id="education-list"></div>
+          </div>
+          <div class="carousel-nav">
+            <button type="button" class="carousel-btn carousel-prev" aria-label="Previous education">← Previous</button>
+            <span class="carousel-counter" aria-live="polite">1 / 1</span>
+            <button type="button" class="carousel-btn carousel-next" aria-label="Next education">Next →</button>
+          </div>
+        </div>
       </section>
 
       <section id="projects" class="section container">
-        <h2 class="section-title">Projects</h2>
-        <div class="grid" id="projects"></div>
+        <header class="section-header">
+          <h2 class="section-title">Projects</h2>
+          <p class="section-subtitle">Selected work and side projects</p>
+        </header>
+        <div class="carousel" id="projects-carousel" data-per-view="2">
+          <div class="carousel-viewport">
+            <div class="carousel-track" id="projects-grid"></div>
+          </div>
+          <div class="carousel-nav">
+            <button type="button" class="carousel-btn carousel-prev" aria-label="Previous projects">← Previous</button>
+            <span class="carousel-counter" aria-live="polite">1 / 1</span>
+            <button type="button" class="carousel-btn carousel-next" aria-label="Next projects">Next →</button>
+          </div>
+        </div>
       </section>
 
       <section id="contact" class="section container">
-        <h2 class="section-title">Contact</h2>
+        <header class="section-header">
+          <h2 class="section-title">Contact</h2>
+          <p class="section-subtitle">Get in touch — I'd love to hear from you</p>
+        </header>
         <div class="contact-grid">
           <div class="contact-info">
             <p class="contact-intro">Have a question or want to work together? Reach out through any of these:</p>

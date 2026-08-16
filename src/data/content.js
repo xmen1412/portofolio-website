@@ -1,13 +1,17 @@
 export const site = {
-  name: 'Hello Welcome, My Name Is Muhammad Akbar',
+  greeting: 'Hello, I\'m',
+  name: 'Muhammad Akbar',
   role: 'Data Engineer',
-  tagline: 'Building reliable data pipelines, warehouses, and analytics that turn raw data into decisions.',
+  tagline:
+    'Building reliable data pipelines, warehouses, and analytics that turn raw data into decisions.',
+  avatar: null,
+  // placecholder for avatar assets/images/your-photo.jpg
 }
 
 export const experience = [
   {
-    role: 'Data Engineer',
-    company: 'Astra International Tbk',
+    role: 'Data Engineer II',
+    company: 'Astra International Tbk - Honda Sales Operation',
     companyLogo: 'assets/images/jobs/astra.png',
     period: 'Jan 2025 — Present',
     points: [
@@ -55,6 +59,19 @@ export const skills = [
   {
     category: 'Dashboard',
     items: ['AWS', 'Docker', 'Terraform', 'CI/CD'],
+  },
+]
+
+export const education = [
+  {
+    degree: 'Bachelor of Informatics Engineering',
+    school: 'Politeknik Negeri Jakarta',
+    schoolLogo: 'assets/images/education/pnj.png',
+    period: '2016 — 2020',
+    details: [
+      'Major in Computer Science or related field.',
+      'Relevant coursework: databases, algorithms, data structures.',
+    ],
   },
 ]
 

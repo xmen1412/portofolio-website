@@ -1,21 +1,39 @@
-import { site, experience, skills, projects, contact } from '../data/content.js'
+import { site, experience, skills, education, projects, contact } from '../data/content.js'
 import { initTheme } from './theme.js'
+import { initCarousel } from './carousel.js'
 import '../css/style.css'
 
 initTheme(document.getElementById('theme-toggle'))
 
+const heroGreeting = document.getElementById('hero-greeting')
 const heroName = document.getElementById('hero-name')
 const heroRole = document.getElementById('hero-role')
 const heroTagline = document.getElementById('hero-tagline')
+const heroAvatar = document.getElementById('hero-avatar')
+
+heroGreeting.textContent = site.greeting
 heroName.textContent = site.name
 heroRole.textContent = site.role
 heroTagline.textContent = site.tagline
+
+if (site.avatar) {
+  heroAvatar.innerHTML = `<img src="${site.avatar}" alt="${site.name}" />`
+} else {
+  const initials = site.name
+    .split(' ')
+    .map((part) => part[0])
+    .join('')
+    .slice(0, 2)
+    .toUpperCase()
+  heroAvatar.textContent = initials
+  heroAvatar.setAttribute('aria-label', site.name)
+}
 
 const timeline = document.getElementById('timeline')
 timeline.innerHTML = experience
   .map(
     (job) => `
-    <div class="job">
+    <div class="job carousel-slide">
       <div class="job-head">
         ${job.companyLogo ? `<img class="job-logo" src="${job.companyLogo}" alt="${job.company}" />` : ''}
         <div>
@@ -29,7 +47,7 @@ timeline.innerHTML = experience
   )
   .join('')
 
-const skillsList = document.getElementById('skills')
+const skillsList = document.getElementById('skills-list')
 skillsList.innerHTML = skills
   .map(
     (group) => `
@@ -40,11 +58,29 @@ skillsList.innerHTML = skills
   )
   .join('')
 
-const projectGrid = document.getElementById('projects')
+const educationList = document.getElementById('education-list')
+educationList.innerHTML = education
+  .map(
+    (item) => `
+    <div class="education carousel-slide">
+      <div class="education-head">
+        ${item.schoolLogo ? `<img class="education-logo" src="${item.schoolLogo}" alt="${item.school}" />` : ''}
+        <div>
+          <h3>${item.degree}</h3>
+          <p class="school">${item.school}</p>
+          <p class="period">${item.period}</p>
+        </div>
+      </div>
+      <ul>${item.details.map((d) => `<li>${d}</li>`).join('')}</ul>
+    </div>`
+  )
+  .join('')
+
+const projectGrid = document.getElementById('projects-grid')
 projectGrid.innerHTML = projects
   .map(
     (p) => `
-    <div class="card">
+    <div class="card carousel-slide">
       <div class="card-meta">
         <span class="card-date">${p.date}</span>
         <span class="card-context">${p.context}</span>
@@ -55,6 +91,10 @@ projectGrid.innerHTML = projects
     </div>`
   )
   .join('')
+
+initCarousel(document.getElementById('experience-carousel'))
+initCarousel(document.getElementById('education-carousel'))
+initCarousel(document.getElementById('projects-carousel'))
 
 const contactEmail = document.getElementById('contact-email')
 contactEmail.href = `mailto:${contact.email}`
