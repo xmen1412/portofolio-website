@@ -46,6 +46,8 @@ site.badges.forEach((badge, i) => {
 
 heroTagline.textContent = site.tagline
 
+document.getElementById('about-bio').textContent = site.bio
+
 if (site.avatar) {
   heroAvatar.innerHTML = `<img src="${site.avatar}" alt="${site.name}" />`
 } else {
@@ -130,6 +132,7 @@ const contactEmail = document.getElementById('contact-email')
 contactEmail.href = `mailto:${contact.email}`
 document.getElementById('contact-github').href = contact.github
 document.getElementById('contact-linkedin').href = contact.linkedin
+document.getElementById('contact-whatsapp').href = `https://wa.me/${contact.whatsapp.replace(/[^0-9]/g, '')}`
 
 const contactForm = document.getElementById('contact-form')
 const formBtn = contactForm.querySelector('button')

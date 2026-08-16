@@ -233,6 +233,14 @@ a:hover {
   color: var(--text-muted);
   max-width: 36rem;
   line-height: 1.7;
+  font-size: 1rem;
+}
+
+/* About */
+.about-bio {
+  color: var(--text-muted);
+  line-height: 1.8;
+  max-width: 60ch;
 }
 
 /* Experience */

@@ -7,7 +7,9 @@ export const site = {
     { label: 'Transforming Complexity into Clarity', type: 'personality' },
   ],
   tagline:
-    'Building reliable data pipelines, warehouses, and analytics that turn raw data into decisions.',
+    'Turning raw data into reliable pipelines, warehouses, or decisions.',
+  bio:
+    'Muhammad Akbar is a dedicated professional in the field of Data Engineering, driven by an unwavering passion for exploring and advancing technological innovations and scientific research in Information Technology and Computer Science. With a profound focus on Cloud Computing, Internet of Things, Data Science, and Information Technology Business, Muhammad actively spearheads various projects and initiatives in these domains.\n\nBeyond his professional pursuits, Muhammad finds solace in the pages of books, relishes the adventures of travel, and cherishes moments spent with friends and family. He also possesses a remarkable talent for playing musical instruments, which he cultivates with zeal whenever the opportunity arises. Muhammad\'s multifaceted interests and skills converge to shape him into a well-rounded individual with a distinctive outlook on life and technology.',
   avatar: 'assets/images/profile/profile.jpeg',
   logo: 'mrakbar.exe',
 }
@@ -104,11 +106,12 @@ export const projects = [
     date: '2024',
     context: 'Company (My Workspace)',
     link: '#',
-  },
+  }
 ]
 
 export const contact = {
   email: 'akbar382043@gmail.com',
   github: 'https://github.com/xmen1412',
   linkedin: 'https://www.linkedin.com/in/muhammad-akbar-b9a1bb126/',
+  whatsapp: '+6289618487949',
 }
