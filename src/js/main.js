@@ -1,24 +1,49 @@
 import { site, experience, skills, education, projects, contact } from '../data/content.js'
+import { emailjsConfig } from '../data/config.js'
 import { initTheme } from './theme.js'
 import { initCarousel } from './carousel.js'
+import emailjs from '@emailjs/browser'
 import '../css/style.css'
+
+emailjs.init({ publicKey: emailjsConfig.publicKey })
 
 initTheme(document.getElementById('theme-toggle'))
 
 document.getElementById('site-logo').textContent = site.logo
-document.title = `${site.name} — ${site.role}`
+document.title = `${site.name} — ${site.badges[0]?.label || 'Portfolio'}`
 
 const heroGreeting = document.getElementById('hero-greeting')
 const heroName = document.getElementById('hero-name')
-const heroRole = document.getElementById('hero-role')
-const heroPersonality = document.getElementById('hero-personality')
+const heroBadges = document.querySelector('.profile-badges')
 const heroTagline = document.getElementById('hero-tagline')
 const heroAvatar = document.getElementById('hero-avatar')
 
 heroGreeting.textContent = site.greeting
 heroName.textContent = site.name
-heroRole.textContent = site.role
-heroPersonality.textContent = site.personality
+
+const badgeColors = [
+  'var(--accent)',
+  '#10b981', // emerald
+  '#f59e0b', // amber
+  '#ef4444', // red
+  '#8b5cf6', // violet
+  '#ec4899', // pink
+  '#06b6d4', // cyan
+  '#f97316', // orange
+]
+
+site.badges.forEach((badge, i) => {
+  const color = badgeColors[i % badgeColors.length]
+  const cls = badge.type === 'role' ? 'profile-role' : 'profile-personality'
+  const el = document.createElement('p')
+  el.className = cls
+  el.textContent = badge.label
+  el.style.setProperty('--badge-bg', `color-mix(in srgb, ${color} 10%, var(--bg-alt))`)
+  el.style.setProperty('--badge-border', `color-mix(in srgb, ${color} 25%, var(--border))`)
+  el.style.setProperty('--badge-text', color)
+  heroBadges.appendChild(el)
+})
+
 heroTagline.textContent = site.tagline
 
 if (site.avatar) {
@@ -107,14 +132,30 @@ document.getElementById('contact-github').href = contact.github
 document.getElementById('contact-linkedin').href = contact.linkedin
 
 const contactForm = document.getElementById('contact-form')
-contactForm.addEventListener('submit', (e) => {
+const formBtn = contactForm.querySelector('button')
+contactForm.addEventListener('submit', async (e) => {
   e.preventDefault()
-  const name = document.getElementById('cf-name').value.trim()
-  const fromEmail = document.getElementById('cf-email').value.trim()
-  const message = document.getElementById('cf-message').value.trim()
-  const subject = encodeURIComponent(`Message from ${name} via portfolio`)
-  const body = encodeURIComponent(`${message}\n\n— ${name}\nReply to: ${fromEmail}`)
-  window.location.href = `mailto:${contact.email}?subject=${subject}&body=${body}`
+  formBtn.disabled = true
+  formBtn.textContent = 'Sending...'
+
+  try {
+    await emailjs.send(emailjsConfig.serviceId, emailjsConfig.templateId, {
+      from_name: document.getElementById('cf-name').value.trim(),
+      from_email: document.getElementById('cf-email').value.trim(),
+      message: document.getElementById('cf-message').value.trim(),
+      to_email: contact.email,
+    })
+    formBtn.textContent = 'Sent!'
+    contactForm.reset()
+  } catch (err) {
+    formBtn.textContent = 'Failed — try again'
+    console.error('EmailJS error:', err)
+  } finally {
+    setTimeout(() => {
+      formBtn.disabled = false
+      formBtn.textContent = 'Send Message'
+    }, 3000)
+  }
 })
 
 document.getElementById('footer-year').textContent = new Date().getFullYear()

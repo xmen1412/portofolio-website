@@ -1,8 +1,11 @@
 export const site = {
   greeting: 'Hello, I\'m',
   name: 'Muhammad Akbar',
-  role: 'Data Alchemist',
-  personality: 'Growth-driven guy',
+  badges: [
+    { label: 'Data Alchemist', type: 'role' },
+    { label: 'Growth-driven guy', type: 'personality' },
+    { label: 'Transforming Complexity into Clarity', type: 'personality' },
+  ],
   tagline:
     'Building reliable data pipelines, warehouses, and analytics that turn raw data into decisions.',
   avatar: 'assets/images/profile/profile.jpeg',
@@ -42,7 +45,7 @@ export const experience = [
     role: 'ICT Support Intern',
     company: 'Injourney Indonesia',
     companyLogo: 'assets/images/jobs/injourney.png',
-    period: ' 2021 — Sep 2021',
+    period: ' Jul 2019 — Sep 2019',
     points: [
       'Describe what you did here.',
     ],
@@ -107,5 +110,5 @@ export const projects = [
 export const contact = {
   email: 'akbar382043@gmail.com',
   github: 'https://github.com/xmen1412',
-  linkedin: 'https://www.linkedin.com/in/your-username',
+  linkedin: 'https://www.linkedin.com/in/muhammad-akbar-b9a1bb126/',
 }

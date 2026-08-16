@@ -210,10 +210,10 @@ a:hover {
 .profile-role {
   display: inline-block;
   font-size: 0.9rem;
-  color: var(--accent);
+  color: var(--badge-text, var(--accent));
   font-weight: 600;
-  background: color-mix(in srgb, var(--accent) 10%, var(--bg-alt));
-  border: 1px solid color-mix(in srgb, var(--accent) 25%, var(--border));
+  background: var(--badge-bg, color-mix(in srgb, var(--accent) 10%, var(--bg-alt)));
+  border: 1px solid var(--badge-border, color-mix(in srgb, var(--accent) 25%, var(--border)));
   border-radius: 999px;
   padding: 0.3rem 0.85rem;
 }
@@ -221,10 +221,10 @@ a:hover {
 .profile-personality {
   display: inline-block;
   font-size: 0.9rem;
-  color: var(--text);
+  color: var(--badge-text, var(--text));
   font-weight: 500;
-  background: var(--bg-alt);
-  border: 1px solid var(--border);
+  background: var(--badge-bg, var(--bg-alt));
+  border: 1px solid var(--badge-border, var(--border));
   border-radius: 999px;
   padding: 0.3rem 0.85rem;
 }
