@@ -21,7 +21,8 @@ export const experience = [
     company: 'Astra International Tbk - Honda Sales Operation',
     companyLogo: 'assets/images/jobs/astra.png',
     period: 'Jan 2025 — Present',
-    points: [
+    overview: 'Astra International Tbk - Honda Sales Operation is the chief operating arm for Honda motorcycle sales, logistics, and dealer network governance across Indonesia.',
+    roles: [
       'Describe what you do here.',
       'Add another achievement.',
     ],
@@ -31,7 +32,8 @@ export const experience = [
     company: 'Hypefast',
     companyLogo: 'assets/images/jobs/hypefast.jpeg',
     period: 'Sep 2021 — Dec 2024',
-    points: [
+    overview: 'Hypefast is a premier brand aggregator in Southeast Asia, scaling digital-native consumer e-commerce brands through technology, capital, and operational infrastructure.',
+    roles: [
       'Describe what you did here.',
     ],
   },
@@ -40,7 +42,8 @@ export const experience = [
     company: 'PT Spasi Indonesia',
     companyLogo: 'assets/images/jobs/spasi indonesia.png',
     period: 'Mar 2021 — Sep 2021',
-    points: [
+    overview: 'PT Spasi Indonesia is an IT consulting and software development company providing data analytics and enterprise digital transformation solutions.',
+    roles: [
       'Describe what you did here.',
     ],
   },
@@ -48,8 +51,9 @@ export const experience = [
     role: 'ICT Support Intern',
     company: 'Injourney Indonesia',
     companyLogo: 'assets/images/jobs/injourney.png',
-    period: ' Jul 2019 — Sep 2019',
-    points: [
+    period: 'Jul 2019 — Sep 2019',
+    overview: 'Injourney (PT Aviasi Pariwisata Indonesia) is the state-owned aviation and tourism holding company managing airport operations and tourism destinations in Indonesia.',
+    roles: [
       'Describe what you did here.',
     ],
   },
@@ -58,23 +62,40 @@ export const experience = [
 export const skills = [
   {
     category: 'Languages',
-    items: ['Python', 'SQL', 'Bash'],
+    items: ['Python', 'SQL', 'Bash','Javascript'],
   },
   {
     category: 'Data Engineering',
-    items: ['Apache Spark', 'dbt', 'Airflow', 'Kafka'],
+    items: ['Apache Spark','Apache Airflow', 'Apache Kafka'],
   },
   {
     category: 'Databases',
-    items: ['PostgreSQL', 'BigQuery', 'Snowflake'],
+    items: ['PostgreSQL', 'BigQuery', 'MongoDB','SQL Server','ChromaDB'],
   },
   {
     category: 'Cloud',
-    items: ['AWS', 'Docker', 'Terraform', 'CI/CD'],
+    items: ['Microsoft Azure', 
+      'Microsoft Fabric', 
+      'Google Cloud Platform', 
+      'Cloud SQL','Cloud Run',
+      'Cloud Storage',
+      'Azure Data Factory','Azure Data Lake Storage','Azure Databricks'],
   },
   {
     category: 'Dashboard',
-    items: ['AWS', 'Docker', 'Terraform', 'CI/CD'],
+    items: ['Power BI', 'Metabase', 'Looker'],
+  },
+  {
+    category: 'AI and Machine Learning',
+    items: ['LLM', 'Langchain', 'Deep Learning'],
+  },
+  {
+    category: 'Version Control',
+    items: ['Git', 'GitHub', 'Bitbucket'],
+  },
+  {
+    category: 'Project Management',
+    items: ['Jira', 'Trello'],
   },
 ]
 
@@ -99,6 +120,11 @@ export const projects = [
     date: '2025',
     context: 'Personal',
     link: '#',
+    overview: 'Explain the background, core problem this project solves, and architecture design.',
+    roles: [
+      'Built end-to-end automated ETL pipeline processing large-scale data.',
+      'Designed data models and optimized query execution time.',
+    ],
   },
   {
     name: 'Project Name',
@@ -107,7 +133,12 @@ export const projects = [
     date: '2024',
     context: 'Company (My Workspace)',
     link: '#',
-  }
+    overview: 'Describe the business requirements, data warehouse modeling, and reporting metrics.',
+    roles: [
+      'Implemented dimensional modeling and modular dbt transformations.',
+      'Automated data quality testing and lineage documentation.',
+    ],
+  },
 ]
 
 export const contact = {

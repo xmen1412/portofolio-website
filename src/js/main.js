@@ -84,7 +84,22 @@ timeline.innerHTML = experience
           <p class="period">${job.period}</p>
         </div>
       </div>
-      <ul>${job.points.map((p) => `<li>${p}</li>`).join('')}</ul>
+      <button type="button" class="expand-btn" aria-expanded="false">
+        <span class="expand-label">View Details</span>
+        <svg class="expand-chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="expand-drawer">
+        ${job.overview ? `
+          <div class="drawer-section">
+            <h4 class="drawer-title">Overview</h4>
+            <p class="drawer-text">${job.overview}</p>
+          </div>` : ''}
+        ${(job.roles || job.points) ? `
+          <div class="drawer-section">
+            <h4 class="drawer-title">My Roles</h4>
+            <ul class="drawer-list">${(job.roles || job.points).map((p) => `<li>${p}</li>`).join('')}</ul>
+          </div>` : ''}
+      </div>
     </div>`
   )
   .join('')
@@ -128,11 +143,41 @@ projectGrid.innerHTML = projects
         <span class="card-context">${p.context}</span>
       </div>
       <h3><a href="${p.link}">${p.name}</a></h3>
-      <p>${p.description}</p>
+      <p class="card-desc">${p.description}</p>
       <div class="tags">${p.tech.map((t) => `<span class="tag">${t}</span>`).join('')}</div>
+      <button type="button" class="expand-btn" aria-expanded="false">
+        <span class="expand-label">View Details</span>
+        <svg class="expand-chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="expand-drawer">
+        ${p.overview ? `
+          <div class="drawer-section">
+            <h4 class="drawer-title">Overview</h4>
+            <p class="drawer-text">${p.overview}</p>
+          </div>` : ''}
+        ${p.roles ? `
+          <div class="drawer-section">
+            <h4 class="drawer-title">My Roles</h4>
+            <ul class="drawer-list">${p.roles.map((r) => `<li>${r}</li>`).join('')}</ul>
+          </div>` : ''}
+      </div>
     </div>`
   )
   .join('')
+
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('.expand-btn')
+  if (!btn) return
+  const card = btn.closest('.job, .card')
+  if (!card) return
+
+  const isExpanded = card.classList.toggle('is-expanded')
+  btn.setAttribute('aria-expanded', isExpanded ? 'true' : 'false')
+  const label = btn.querySelector('.expand-label')
+  if (label) {
+    label.textContent = isExpanded ? 'Hide Details' : 'View Details'
+  }
+})
 
 initCarousel(document.getElementById('experience-carousel'))
 initCarousel(document.getElementById('education-carousel'))
