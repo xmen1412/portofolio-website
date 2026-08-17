@@ -12,6 +12,7 @@ export const site = {
     'Muhammad Akbar is a dedicated professional in the field of Data Engineering, driven by an unwavering passion for exploring and advancing technological innovations and scientific research in Information Technology and Computer Science. With a profound focus on Cloud Computing, Internet of Things, Data Science, and Information Technology Business, Muhammad actively spearheads various projects and initiatives in these domains.\n\nBeyond his professional pursuits, Muhammad finds solace in the pages of books, relishes the adventures of travel, and cherishes moments spent with friends and family. He also possesses a remarkable talent for playing musical instruments, which he cultivates with zeal whenever the opportunity arises. Muhammad\'s multifaceted interests and skills converge to shape him into a well-rounded individual with a distinctive outlook on life and technology.',
   avatar: 'assets/images/profile/profile.jpeg',
   logo: 'mrakbar.exe',
+  cv: 'https://drive.google.com/file/d/1Gdtzo-2hXipcXYL3DqtACDolqW4ryfBb/view?usp=sharing',
 }
 
 export const experience = [

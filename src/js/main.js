@@ -48,6 +48,16 @@ heroTagline.textContent = site.tagline
 
 document.getElementById('about-bio').textContent = site.bio
 
+const heroCvBtn = document.getElementById('hero-cv-btn')
+if (site.cv) {
+  heroCvBtn.href = site.cv
+  if (site.cv.startsWith('http')) {
+    heroCvBtn.removeAttribute('download')
+  }
+} else {
+  heroCvBtn.style.display = 'none'
+}
+
 if (site.avatar) {
   heroAvatar.innerHTML = `<img src="${site.avatar}" alt="${site.name}" />`
 } else {

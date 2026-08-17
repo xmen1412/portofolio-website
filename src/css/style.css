@@ -236,6 +236,49 @@ a:hover {
   font-size: 1rem;
 }
 
+.profile-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.55rem 1.15rem;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.btn:hover {
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #ffffff;
+  box-shadow: 0 2px 4px color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+.btn-primary:hover {
+  background: color-mix(in srgb, var(--accent) 88%, #000);
+  box-shadow: 0 4px 8px color-mix(in srgb, var(--accent) 40%, transparent);
+  color: #ffffff;
+}
+
+.btn svg {
+  flex-shrink: 0;
+}
+
 /* About */
 .about-bio {
   color: var(--text-muted);
@@ -631,6 +674,10 @@ a:hover {
 
   .profile-tagline {
     max-width: none;
+  }
+
+  .profile-actions {
+    justify-content: center;
   }
 
   .nav-links a {
