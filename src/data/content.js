@@ -39,7 +39,7 @@ export const experience = [
   {
     role: 'Data Analyst',
     company: 'PT Spasi Indonesia',
-    companyLogo: 'assets/images/jobs/spasi indonesia.png',
+    companyLogo: 'assets/images/jobs/spasi-indonesia.png',
     period: 'Mar 2021 — Sep 2021',
     overview: 'PT Spasi Indonesia is an IT consulting and software development company providing data analytics and enterprise digital transformation solutions.',
     roles: [
